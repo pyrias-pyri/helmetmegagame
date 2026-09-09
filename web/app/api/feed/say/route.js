@@ -25,13 +25,13 @@ export async function POST(request) {
   if (!session?.discordUserId) return jsonResponse({ error: "Sign in first." }, 401);
 
   const character = await loadFeedCharacter(session.discordUserId);
-  if (!character) return jsonResponse({ error: "You have no living character. ‡" }, 403);
+  if (!character) return jsonResponse({ error: "You have no living character." }, 403);
 
   let body;
   try {
     body = await request.json();
   } catch {
-    return jsonResponse({ error: "That didn't arrive in one piece. ‡" }, 400);
+    return jsonResponse({ error: "That didn't arrive in one piece." }, 400);
   }
 
   const place = typeof body?.place === "string" ? body.place : null;
@@ -128,7 +128,7 @@ async function pullIntoConversation(character, placeKey, content) {
     // default) and `source` decides how it is DRAWN — DmThread renders a
     // mention row differently, and dmThread.js filters on it. Orthogonal, and
     // both wanted here. It lives in dmKinds.js now, not the old dmSources.js.
-    await sendDm(target.discordUserId, `*You were named in ${where} · ${conversation.name}.* ‡`, {
+    await sendDm(target.discordUserId, `*You were named in ${where} · ${conversation.name}.*`, {
       source: MENTION_SOURCE,
     }).catch(() => {});
   }

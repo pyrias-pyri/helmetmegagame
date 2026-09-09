@@ -55,7 +55,7 @@ export default function TurnForecast({
     }
   }
 
-  if (travellingTo) lines.push(<li key="travel">{`You arrive at ${travellingTo}. ‡`}</li>);
+  if (travellingTo) lines.push(<li key="travel">{`You arrive at ${travellingTo}.`}</li>);
 
   // Dinner, the way db/lib/hungerPass.js settles it: Hungerless owes nothing,
   // a meal already eaten covers it, otherwise the flat 1 ⬢ (2 with Fast
@@ -66,8 +66,8 @@ export default function TurnForecast({
     lines.push(
       <li key="dinner">
         {resources >= cost
-          ? `Dinner costs ${cost} ⬢, unless you eat something you're carrying. ‡`
-          : `You can't afford dinner — you'll go Hungry unless you eat something you're carrying. ‡`}
+          ? `Dinner costs ${cost} ⬢, unless you eat something you're carrying.`
+          : `You can't afford dinner — you'll go Hungry unless you eat something you're carrying.`}
       </li>,
     );
   }

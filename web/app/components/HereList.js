@@ -172,7 +172,7 @@ export default function HereList({
         .then((res) => {
           if (res && !res.ok) setAddError(res.error ?? "Something went wrong.");
         })
-        .catch(() => setAddError("Could not reach the server. Nothing was changed. ‡"));
+        .catch(() => setAddError("Could not reach the server. Nothing was changed."));
     },
     [onAddMember],
   );

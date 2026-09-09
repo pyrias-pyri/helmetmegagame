@@ -22,7 +22,7 @@ import PaperSheet from "./PaperSheet";
 export function tagDurationFor({ tag, expiresTurn = null, currentTurn = null, armedTurn = null }) {
   if (armedTurn != null) {
     return {
-      label: `Armed. It fires as turn ${armedTurn} closes. ‡`,
+      label: `Armed. It fires as turn ${armedTurn} closes.`,
       badge: `armed · ${turnsLeft(armedTurn, currentTurn) ?? "?"}t`,
       armed: true,
     };

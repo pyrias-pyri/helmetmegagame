@@ -66,8 +66,8 @@ export async function canReachParty(
 // that would go looking for a key they don't need.
 export function outOfReachMessage(party, { isSilo = false } = {}) {
   if (party?.kind === "room" && isSilo) {
-    return `Your silo is in ${party.name} — you have to be standing there to take anything out. ‡`;
+    return `Your silo is in ${party.name} — you have to be standing there to take anything out.`;
   }
-  if (party?.kind === "room") return `You can't get into ${party.name} from where you stand. ‡`;
+  if (party?.kind === "room") return `You can't get into ${party.name} from where you stand.`;
   return `${party?.name ?? "They"} isn't here.`;
 }

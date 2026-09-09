@@ -34,5 +34,5 @@ export function travelFoot(option, freeLeft, mounted) {
 // component for the same reason travelFoot is: /play and /map both say it, and
 // two copies would drift.
 export function openedByLabel(tagName) {
-  return `Opened by your ${tagName}. ‡`;
+  return `Opened by your ${tagName}.`;
 }

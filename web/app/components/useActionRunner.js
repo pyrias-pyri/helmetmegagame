@@ -24,7 +24,7 @@ export default function useActionRunner() {
         if (!res?.ok) message = res?.error ?? "Something went wrong.";
         else if (onOk) onOk(res);
       } catch {
-        message = "Could not reach the server. Nothing was changed. ‡";
+        message = "Could not reach the server. Nothing was changed.";
       }
       if (message !== null) {
         setError(message);

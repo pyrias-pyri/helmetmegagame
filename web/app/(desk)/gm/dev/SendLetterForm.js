@@ -67,7 +67,7 @@ export default function SendLetterForm({ characters }) {
               name="sealMark"
               type="text"
               maxLength={200}
-              placeholder="A crown over crossed howitzers. ‡"
+              placeholder="A crown over crossed howitzers."
               className="w-full"
             />
           </label>

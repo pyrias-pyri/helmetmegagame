@@ -73,9 +73,9 @@ export const ACTION_HELP = {
     "Put someone standing here on the cross. It needs a Cross built where you stand, and it doesn't spend your Move. They hang there unable to act, and in a turn they are Dying.",
   harm: "Further injure someone who is bound or incapacitated.",
   torture:
-    "You can torture people, revealing all their tags on a 4 or higher. Brave or Craven characters will break on different timelines. ‡",
+    "You can torture people, revealing all their tags on a 4 or higher. Brave or Craven characters will break on different timelines.",
   mutilate:
-    "Cut a piece off somebody tied up here, or off a body you can reach. One piece each time, and it costs you nothing. The piece is yours to keep. ‡",
+    "Cut a piece off somebody tied up here, or off a body you can reach. One piece each time, and it costs you nothing. The piece is yours to keep.",
   bury: "Bury someone. Removes the player's Cursed status.",
   engrave: "Memorialize someone's name. Removes the player's Cursed status.",
   disguise:

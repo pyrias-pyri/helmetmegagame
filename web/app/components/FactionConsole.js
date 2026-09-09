@@ -262,7 +262,7 @@ function SiloTab({ faction, silo, isOfficer, rooms, run, pending }) {
             silo" — which reads like a broken dropdown unless it says otherwise. */}
         {rooms.length === 0 ? (
           <p className="text-sm text-muted mt-2">
-            Nowhere to bank yet. A room only turns up here once you have stood at its door and can open it. ‡
+            Nowhere to bank yet. A room only turns up here once you have stood at its door and can open it. 
           </p>
         ) : (
           <p className="text-sm text-muted mt-2">

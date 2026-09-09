@@ -25,7 +25,7 @@ export async function GET(request) {
   const viewer = await loadFeedViewer();
   if (!viewer.discordUserId) return Response.json({ error: "Sign in first." }, { status: 401 });
   if (!viewer.character && !viewer.gm) {
-    return Response.json({ error: "You have no living character. ‡" }, { status: 403 });
+    return Response.json({ error: "You have no living character." }, { status: 403 });
   }
 
   const params = new URL(request.url).searchParams;

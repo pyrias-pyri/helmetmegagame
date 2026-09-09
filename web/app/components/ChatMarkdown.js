@@ -67,7 +67,7 @@ function ChatSpoiler({ children }) {
       type="button"
       className="chat-spoiler"
       data-shown={shown ? "true" : "false"}
-      aria-label={shown ? undefined : "Hidden. Click to show it ‡"}
+      aria-label={shown ? undefined : "Hidden. Click to show it"}
       onClick={() => setShown(true)}
     >
       {children}

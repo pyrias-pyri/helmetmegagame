@@ -20,7 +20,7 @@ export async function moveResources(tx, party, delta) {
     await moveParty(tx, party, delta);
   } catch (err) {
     if (!(err instanceof InsufficientResourcesError)) throw err;
-    if (party?.kind === "room") throw new UserError(`${party.name ?? "That room"} no longer holds ${err.amount} ⬢. ‡`);
+    if (party?.kind === "room") throw new UserError(`${party.name ?? "That room"} no longer holds ${err.amount} ⬢.`);
     throw new UserError(`${party?.name ?? "That character"} no longer has ${err.amount} ⬢.`);
   }
 }
@@ -93,7 +93,7 @@ export async function takeTagFrom(tx, party, tagId, quantity) {
   if (!party?.id || !tagId) return;
   if (party.kind === "room") {
     const ok = await dropRoomTag(tx, party.id, tagId, quantity);
-    if (!ok) throw new UserError(`${party.name ?? "That room"} no longer holds that. ‡`);
+    if (!ok) throw new UserError(`${party.name ?? "That room"} no longer holds that.`);
     return;
   }
   await dropCharacterTag(tx, party.id, tagId, quantity);

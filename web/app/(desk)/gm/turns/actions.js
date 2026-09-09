@@ -301,7 +301,7 @@ async function createStagedEffectsImpl({ targetCharacterIds, moveId, cavingRollI
   const ops = normalizeStagedOps(tagOps);
   const place = await normalizeStagedLocation(locationId);
   if (!delta && !points && !ops.length && !place) {
-    throw new UserError("Stage a resource, tag-point, tag change, or relocation. ‡");
+    throw new UserError("Stage a resource, tag-point, tag change, or relocation.");
   }
 
   // Validated now with the same engine the push runs, so they can't disagree.
@@ -425,7 +425,7 @@ async function updateStagedEffectImpl({ stagedEffectId, resources, tagPoints, ta
   const ops = normalizeStagedOps(tagOps);
   const place = await normalizeStagedLocation(locationId);
   if (!delta && !points && !ops.length && !place) {
-    throw new UserError("Stage a resource, tag-point, tag change, or relocation. ‡");
+    throw new UserError("Stage a resource, tag-point, tag change, or relocation.");
   }
   if (ops.length) {
     const tags = await prisma.tag.findMany({ where: { id: { in: ops.map((o) => o.tagId) } } });
@@ -1114,14 +1114,14 @@ async function undoCavingFindImpl({ rollId }) {
   });
   if (!roll) throw new UserError("That roll is gone.");
   if (!roll.lootTagId) throw new UserError("That roll found nothing.");
-  if (roll.lootUndoneAt) throw new UserError("That find has already been taken back. ‡");
+  if (roll.lootUndoneAt) throw new UserError("That find has already been taken back.");
 
   await prisma.$transaction(async (tx) => {
     const claimed = await tx.cavingRoll.updateMany({
       where: { id: roll.id, lootUndoneAt: null },
       data: { lootUndoneAt: new Date() },
     });
-    if (claimed.count === 0) throw new UserError("That find has already been taken back. ‡");
+    if (claimed.count === 0) throw new UserError("That find has already been taken back.");
     await dropCharacterTag(tx, roll.characterId, roll.lootTagId, 1);
     await tx.auditLog.create({
       data: {

@@ -32,13 +32,13 @@ export async function POST(request) {
   // Discord REST call (web/lib/discordGuild.js), and a player's take-back is
   // the common case by a mile.
   const gm = character ? false : (await getGmSession()).isGm;
-  if (!character && !gm) return jsonResponse({ error: "You have no living character. ‡" }, 403);
+  if (!character && !gm) return jsonResponse({ error: "You have no living character." }, 403);
 
   let body;
   try {
     body = await request.json();
   } catch {
-    return jsonResponse({ error: "That didn't arrive in one piece. ‡" }, 400);
+    return jsonResponse({ error: "That didn't arrive in one piece." }, 400);
   }
 
   const seq = typeof body?.seq === "string" || typeof body?.seq === "number" ? String(body.seq) : null;

@@ -23,11 +23,11 @@ export default function SheetTurn({ moveState, pendingOffers = [] }) {
     <span key={o.id} className="chat-quiet-line">
       {o.mine
         ? o.kind === "BIND"
-          ? `Waiting for ${o.otherName} to agree to be bound. ‡`
-          : `Waiting for ${o.otherName} to accept the lesson${o.tagName ? ` in ${o.tagName}` : ""}. ‡`
+          ? `Waiting for ${o.otherName} to agree to be bound.`
+          : `Waiting for ${o.otherName} to accept the lesson${o.tagName ? ` in ${o.tagName}` : ""}.`
         : o.kind === "BIND"
-          ? `${o.otherName} wants to bind you. Answer in your DMs. ‡`
-          : `${o.otherName} offered a lesson${o.tagName ? ` in ${o.tagName}` : ""}. Answer in your DMs. ‡`}
+          ? `${o.otherName} wants to bind you. Answer in your DMs.`
+          : `${o.otherName} offered a lesson${o.tagName ? ` in ${o.tagName}` : ""}. Answer in your DMs.`}
     </span>
   ));
 

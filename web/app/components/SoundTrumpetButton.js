@@ -26,7 +26,7 @@ export default function SoundTrumpetButton() {
     // RequestActionsProvider.js documents.
     const ok = await confirm({
       title: "Sound the trumpet?",
-      message: "It will be heard for a long way around, and everyone will know something is happening here. ‡",
+      message: "It will be heard for a long way around, and everyone will know something is happening here.",
       confirmLabel: "Sound it",
     });
     if (!ok) return;

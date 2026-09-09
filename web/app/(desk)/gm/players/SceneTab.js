@@ -108,7 +108,7 @@ export default function SceneTab({ characterId }) {
   if (state.places.length === 0) {
     return (
       <div className="p-3">
-        <EmptyState>They are nowhere you can see. ‡</EmptyState>
+        <EmptyState>They are nowhere you can see.</EmptyState>
       </div>
     );
   }

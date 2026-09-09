@@ -79,7 +79,7 @@ function mountMenu(fits, worn, { indoors, motionSick }) {
     return true;
   });
   const note = why.size
-    ? `Some of what you carry isn't offered here: ${[...why].join("; ")}. ‡`
+    ? `Some of what you carry isn't offered here: ${[...why].join("; ")}.`
     : null;
   return { options, note };
 }
@@ -110,7 +110,7 @@ function EmptyCell({ label, options, onPick, pending, span = 1, note = null }) {
       {open && (
         <ClickMenu triggerRef={ref} onClose={() => setOpen(false)} ariaLabel={label}>
           {options.length === 0 && !note ? (
-            <span className="chat-quiet-line">Nothing you carry goes here. ‡</span>
+            <span className="chat-quiet-line">Nothing you carry goes here.</span>
           ) : (
             options.map((ct) => (
               <button
@@ -177,7 +177,7 @@ export default function EquipBoard({ characterTags, isSelf, indoors = false, mot
         const res = await toggleEquip(ct.id);
         if (res?.error) setError(res.error);
       } catch {
-        setError("Could not reach the server. Nothing was changed. ‡");
+        setError("Could not reach the server. Nothing was changed.");
       }
     });
   }
@@ -194,7 +194,7 @@ export default function EquipBoard({ characterTags, isSelf, indoors = false, mot
           <h2>Equipped</h2>
         </div>
         <p className="text-sm text-muted">
-          You&apos;re not carrying anything that can be worn or readied. ‡
+          You&apos;re not carrying anything that can be worn or readied.
         </p>
       </section>
     );
@@ -336,7 +336,7 @@ export default function EquipBoard({ characterTags, isSelf, indoors = false, mot
             {slot === "WEAPON" && hands > WEAPON_HANDS && (
               <span className="chat-quiet-line">
                 You are holding more than {WEAPON_HANDS} hands&apos; worth — put something away
-                before you ready anything else. ‡
+                before you ready anything else.
               </span>
             )}
           </div>

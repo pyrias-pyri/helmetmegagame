@@ -89,7 +89,7 @@ export default function ActionGrid({ variant = "rack", children = null }) {
         </div>
         {why && (
           <p className="action-strip-why" role="status">
-            <strong>{why.label}:</strong> {why.text ?? "Not something you can do right now. ‡"}
+            <strong>{why.label}:</strong> {why.text ?? "Not something you can do right now."}
           </p>
         )}
       </div>

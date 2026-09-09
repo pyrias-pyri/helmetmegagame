@@ -16,7 +16,7 @@ export async function POST(request) {
   try {
     body = await request.json();
   } catch {
-    return Response.json({ error: "That didn't arrive in one piece. ‡" }, { status: 400 });
+    return Response.json({ error: "That didn't arrive in one piece." }, { status: 400 });
   }
 
   const endpoint = typeof body?.endpoint === "string" ? body.endpoint : "";

@@ -10,6 +10,6 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   const key = vapidPublicKey();
-  if (!key) return Response.json({ error: "Notifications are not set up here. ‡" }, { status: 404 });
+  if (!key) return Response.json({ error: "Notifications are not set up here." }, { status: 404 });
   return Response.json({ key });
 }

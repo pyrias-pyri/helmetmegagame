@@ -68,7 +68,7 @@ function RequestDialogBody({
               maxLength={MAX_REASON_LENGTH}
               value={reason}
               onChange={(e) => setReason(e.target.value)}
-              placeholder="The GMs will see this. ‡"
+              placeholder="The GMs will see this."
             />
           </label>
         )}
